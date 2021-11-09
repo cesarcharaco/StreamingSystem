@@ -14,22 +14,17 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         \DB::table('users')->insert([
-            'name' => 'Marisol',
-            'email' => 'marisol@spreading.com',
+            'name' => 'admin',
+            'email' => 'admin@streamingsystem.com',
             'password' => bcrypt('123456'),
-            'user_type' => 'Recepcionista',
+            'user_type' => 'Admin',
         ]);
         \DB::table('users')->insert([
-            'name' => 'Genesis',
-            'email' => 'genesis@spreading.com',
+            'name' => 'Michael',
+            'email' => 'michael@streamingsystem.com',
             'password' => bcrypt('123456'),
-            'user_type' => 'Coordinador(a)',
+            'user_type' => 'Vendedor',
         ]);
 
-        \DB::table('recepcionistas')->insert([
-            'nombres' => 'Marisol',
-            'apellidos' => 'Medina',
-            'id_user' => 2,
-        ]);
     }
 }

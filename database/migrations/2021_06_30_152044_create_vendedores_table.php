@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEstadosTable extends Migration
+class CreateVendedoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateEstadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('estados', function (Blueprint $table) {
+        Schema::create('vendedores', function (Blueprint $table) {
             $table->id();
-            $table->string('estado');
-            $table->string('color');
-            $table->enum('status_stock',['INCREMENTA','DECREMENTA','MANTIENE'])->default('MANTIENE');
+            $table->string('vendedor');
+            $table->string('telefono');
+            $table->string('correo');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateEstadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estados');
+        Schema::dropIfExists('vendedores');
     }
 }
